@@ -1,0 +1,11 @@
+[package]
+name = "rpn"
+version = "0.1.0"
+authors = ["yayoc <hi@yayoc.com>"]
+license = "MIT"
+edition = "2018"
+
+[[bin]]
+name = "rpn"
+doc = false
+path = "src/main.rs"
