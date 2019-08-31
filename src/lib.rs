@@ -46,7 +46,7 @@ impl RPN {
         self.consume_while(|c| c.is_whitespace());
     }
 
-    fn parse(&mut self) -> Result<Vec<i64>, io::Error> {
+    fn parse(&mut self) -> Result<Vec<f64>, io::Error> {
         let mut nums = vec![];
         while !self.eof() {
             self.consume_whitespace();
@@ -85,7 +85,7 @@ impl RPN {
         Ok(nums)
     }
 
-    pub fn calc(input: String) -> Result<i64, io::Error> {
+    pub fn calc(input: String) -> Result<f64, io::Error> {
         let nums = RPN::new(input).parse()?;
         if nums.len() == 1 {
             Ok(nums[0])
@@ -104,13 +104,14 @@ mod tests {
 
     #[test]
     fn test_calc() {
-        assert_eq!(RPN::calc(String::from("1 2 +")).unwrap(), 3);
-        assert_eq!(RPN::calc(String::from("1 2 -")).unwrap(), -1);
-        assert_eq!(RPN::calc(String::from("100 1 +")).unwrap(), 101);
+        assert_eq!(RPN::calc(String::from("1 2 +")).unwrap(), 3.0);
+        assert_eq!(RPN::calc(String::from("1 2 -")).unwrap(), -1.0);
+        assert_eq!(RPN::calc(String::from("100 1 +")).unwrap(), 101.0);
         assert_eq!(
             RPN::calc(String::from("15 7 1 1 + - / 3 * 2 1 1 + + -")).unwrap(),
-            5
+            5.0
         );
+        assert_eq!(RPN::calc(String::from("1 2 /")).unwrap(), 0.5);
         assert!(RPN::calc(String::from("15 7")).is_err());
         assert!(RPN::calc(String::from("a b +")).is_err());
     }
