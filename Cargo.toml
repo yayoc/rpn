@@ -3,7 +3,9 @@ name = "rpn"
 version = "0.1.0"
 authors = ["yayoc <hi@yayoc.com>"]
 license = "MIT"
+description = "Reverse Polish Notation"
 edition = "2018"
+repository = "https://github.com/yayoc/rpn"
 
 [[bin]]
 name = "rpn"
