@@ -1,13 +1,13 @@
 [package]
-name = "rpn"
+name = "rpnc"
 version = "0.1.0"
 authors = ["yayoc <hi@yayoc.com>"]
 license = "MIT"
-description = "Reverse Polish Notation"
+description = "Reverse Polish Notation Calculator"
 edition = "2018"
-repository = "https://github.com/yayoc/rpn"
+repository = "https://github.com/yayoc/rpnc"
 
 [[bin]]
-name = "rpn"
+name = "rpnc"
 doc = false
 path = "src/main.rs"
