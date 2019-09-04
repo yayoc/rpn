@@ -114,5 +114,6 @@ mod tests {
         assert_eq!(RPN::calc(String::from("1 2 /")).unwrap(), 0.5);
         assert!(RPN::calc(String::from("15 7")).is_err());
         assert!(RPN::calc(String::from("a b +")).is_err());
+        assert!(RPN::calc(String::from("")).is_err());
     }
 }
