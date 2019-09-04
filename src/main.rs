@@ -1,4 +1,4 @@
-extern crate rpn;
+extern crate rpnc;
 use std::io;
 
 fn main() {
@@ -7,6 +7,6 @@ fn main() {
         io::stdin()
             .read_line(&mut input)
             .expect("failed to read line");
-        println!("{:?}", rpn::RPN::calc(input));
+        println!("{:?}", rpnc::RPN::calc(input));
     }
 }
